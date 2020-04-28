@@ -18,6 +18,7 @@ void clearSchedule();
 void clearDay(std::string day);
 void exampleSchedule();
 void menu();
+void exit();
 
 
 // Global Variables
@@ -31,7 +32,7 @@ int main()
 {
     while (true)
     {
-        cout << endl;
+        std::cout << std::endl;
         if (k == 1)
         {
             break;
@@ -42,111 +43,74 @@ int main()
     return 0;
 }
 
-void menu()
-{
-    cout << endl;
-    cout << "Please choose from the following options - \n";
-    cout << "1. Add a task \n";
-    cout << "2. Delete a task \n";
-    cout << "3. View schedule \n";
-    cout << "4. View completed tasks \n";
-    cout << "5. Exit \n";
-    cout << " ";
-    cin >> menuSelection;
-    
-    if (menuSelection == 1)
-    {
-        cout << "Which day would you like to add a task to? - \n";
-        cout << " ";
-        cin >> daySelection;
-        
-        if (daySelection == Monday)
-        {
+void menu() {
+    std::cout << std::endl;
+    std::cout << "Please choose from the following options - \n";
+    std::cout << "1. Add a task \n";
+    std::cout << "2. Delete a task \n";
+    std::cout << "3. View schedule \n";
+    std::cout << "4. View completed tasks \n";
+    std::cout << "5. Exit \n";
+    std::cout << " ";
+    std::cin >> menuSelection;
+
+    if (menuSelection == 1) {
+        std::cout << "Which day would you like to add a task to? - \n";
+        std::cout << " ";
+        std::cin >> daySelection;
+
+        if (daySelection == Monday) {
             // Code to access the linked list for Monday
             addTask();
-        }
-        else if (daySelection == Tuesday)
-        {
+        } else if (daySelection == Tuesday) {
             // Code to access the linked list for Tuesday
             addTask();
-        }
-        else if (daySelection == Wednesday)
-        {
+        } else if (daySelection == Wednesday) {
             // Code to access the linked list for Wednesday
             addTask();
-        }
-        else if (daySelection == Thursday)
-        {
+        } else if (daySelection == Thursday) {
             // Code to access the linked list for Thursday
             addTask();
-        }
-        else if (daySelection == Friday)
-        {
+        } else if (daySelection == Friday) {
             // Code to access the linked list for Friday
             addTask();
-        }
-        else if (daySelection == Saturday)
-        {
+        } else if (daySelection == Saturday) {
             // Code to access the linked list for Saturday
             addTask();
-        }
-        else if (daySelection == Sunday)
-        {
+        } else if (daySelection == Sunday) {
             // Code to access the linked list for Sunday
             addTask();
         }
-    }
-    else if (menuSelection == 2)
-    {
+    } else if (menuSelection == 2) {
         cout << "Which task would you like to delete? - \n";
         // Code to show all of the tasks
         removeTask();
-    }
-    else if (menuSelection == 3)
-    {
-        cout << "Which day would you like to view? - \n";
-        cout << " ";
-        cin >> daySelection;
-        
-        if (daySelection == Monday)
-        {
+    } else if (menuSelection == 3) {
+        std::cout << "Which day would you like to view? - \n";
+        std::cout << " ";
+        std::cin >> daySelection;
+
+        if (daySelection == Monday) {
             // Code to access the linked list for Monday
-        }
-        else if (daySelection == Tuesday)
-        {
+        } else if (daySelection == Tuesday) {
             // Code to access the linked list for Tuesday
-        }
-        else if (daySelection == Wednesday)
-        {
+        } else if (daySelection == Wednesday) {
             // Code to access the linked list for Wednesday
-        }
-        else if (daySelection == Thursday)
-        {
+        } else if (daySelection == Thursday) {
             // Code to access the linked list for Thursday
-        }
-        else if (daySelection == Friday)
-        {
+        } else if (daySelection == Friday) {
             // Code to access the linked list for Friday
-        }
-        else if (daySelection == Saturday)
-        {
+        } else if (daySelection == Saturday) {
             // Code to access the linked list for Saturday
-        }
-        else if (daySelection == Sunday)
-        {
+        } else if (daySelection == Sunday) {
             // Code to access the linked list for Sunday
         }
-    }
-    else if (menuSelection == 4)
-    {
+    } else if (menuSelection == 4) {
         // Code to view completed tasks
-    }
-    else if (menuSelection == 5)
-    {
+    } else if (menuSelection == 5) {
         exit();
     }
-        
-    
+}
     
 
 void addTask(std::string, double time)
@@ -176,7 +140,7 @@ void exampleSchedule()
     
 void exit()
 {
-    cout << endl;
-    cout << "See ya! \n";
+    std::cout << std::endl;
+    std::cout << "See ya! \n";
     k = 1;
 }
