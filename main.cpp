@@ -225,9 +225,6 @@ void exampleSchedule()
 void printDay(std::forward_list<std::string> tempList)
 {
     // print the day by iterating through each element of the linked list
-
-    // I wrote this as an example of a print function for a linked list that seems to work well,
-    // feel free to delete it to write a different one if you'd like though. I just needed one to test haha.
     std::cout << "That day has the following tasks: " << std::endl;
     for (std::string&s : tempList)
         std::cout << s << std::endl;
@@ -236,7 +233,7 @@ void printDay(std::forward_list<std::string> tempList)
 
 void printSchedule()
 {
-    // print the schedule by iterating through each element of scheduleArray to print the associated linked lists.
+    // I don't think we need a print schedule since we already have a printDay.
 }
     
 void exit()
