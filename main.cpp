@@ -9,11 +9,10 @@ std::forward_list<std::string> addTask(std::forward_list<std::string> tempList);
 std::forward_list<std::string> removeTask(std::forward_list<std::string> tempList);
 void clearSchedule(std::array<std::forward_list<std::string>, 7> scheduleArray);
 std::forward_list<std::string> clearDay(std::forward_list<std::string> tempList);
-bool isInList(std::forward_list<std::string> tempList, std::string task);
+bool isInList(std::forward_list<std::string> tempList, const std::string& task);
 void exampleSchedule();
 void menu();
 void exit();
-void printSchedule();
 void printDay(std::forward_list<std::string> tempList);
 
 
@@ -76,84 +75,106 @@ void menu() {
         std::cout << "7. Sunday \n";
         std::cin >> daySelection;
 
-        if (daySelection == 'Monday') {
+        if (daySelection == 1) {
             addTask(mondayTasks);
-        } else if (daySelection == 'Tuesday') {
+        } else if (daySelection == 2) {
             addTask(tuesdayTasks);
-        } else if (daySelection == 'Wednesday') {
+        } else if (daySelection == 3) {
             addTask(wednesdayTasks);
-        } else if (daySelection == 'Thursday') {
+        } else if (daySelection == 4) {
             addTask(thursdayTasks);
-        } else if (daySelection == 'Friday') {
+        } else if (daySelection == 5) {
             addTask(fridayTasks);
-        } else if (daySelection == 'Saturday') {
+        } else if (daySelection == 6) {
             addTask(saturdayTasks);
-        } else if (daySelection == 'Sunday') {
+        } else if (daySelection == 7) {
             addTask(sundayTasks);
         }
-    } else if (menuSelection == 2) {
+    }
+    else if (menuSelection == 2) {
         std::cout << "Which day would you like to delete a task from? - \n";
+        std::cout << "1. Monday \n";
+        std::cout << "2. Tuesday \n";
+        std::cout << "3. Wednesday \n";
+        std::cout << "4. Thursday \n";
+        std::cout << "5. Friday \n";
+        std::cout << "6. Saturday \n";
+        std::cout << "7. Sunday \n";
         std::cin >> daySelection;
-        if (daySelection == 'Monday') {
+
+        if (daySelection == 1) {
             removeTask(mondayTasks);
-        } else if (daySelection == 'Tuesday') {
+        } else if (daySelection == 2) {
             removeTask(tuesdayTasks);
-        } else if (daySelection == 'Wednesday') {
+        } else if (daySelection == 3) {
             removeTask(wednesdayTasks);
-        } else if (daySelection == 'Thursday') {
+        } else if (daySelection == 4) {
             removeTask(thursdayTasks);
-        } else if (daySelection == 'Friday') {
+        } else if (daySelection == 5) {
             removeTask(fridayTasks);
-        } else if (daySelection == 'Saturday') {
+        } else if (daySelection == 6) {
             removeTask(saturdayTasks);
-        } else if (daySelection == 'Sunday') {
+        } else if (daySelection == 7) {
             removeTask(sundayTasks);
         }
 
-    } else if (menuSelection == 3) {
+    }
+    else if (menuSelection == 3) {
         std::cout << "Which day would you like to view? - \n";
-        std::cout << " ";
+        std::cout << "1. Monday \n";
+        std::cout << "2. Tuesday \n";
+        std::cout << "3. Wednesday \n";
+        std::cout << "4. Thursday \n";
+        std::cout << "5. Friday \n";
+        std::cout << "6. Saturday \n";
+        std::cout << "7. Sunday \n";
         std::cin >> daySelection;
 
-        if (daySelection == 'Monday') {
+        if (daySelection == 1) {
             printDay(mondayTasks);
-        } else if (daySelection == 'Tuesday') {
+        } else if (daySelection == 2) {
             printDay(tuesdayTasks);
-        } else if (daySelection == 'Wednesday') {
+        } else if (daySelection == 3) {
             printDay(wednesdayTasks);
-        } else if (daySelection == 'Thursday') {
+        } else if (daySelection == 4) {
             printDay(thursdayTasks);
-        } else if (daySelection == 'Friday') {
+        } else if (daySelection == 5) {
             printDay(fridayTasks);
-        } else if (daySelection == 'Saturday') {
+        } else if (daySelection == 6) {
             printDay(saturdayTasks);
-        } else if (daySelection == 'Sunday') {
+        } else if (daySelection == 7) {
             printDay(sundayTasks);
         }
     }
-        else if (menuSelection == 4) {
+    else if (menuSelection == 4) {
         clearSchedule(scheduleArray);
 
     }
-        else if (menuSelection == 5) {
+    else if (menuSelection == 5) {
 
         std::cout << "Which day would you like to clear? - \n";
-        std::cout << " ";
+        std::cout << "1. Monday \n";
+        std::cout << "2. Tuesday \n";
+        std::cout << "3. Wednesday \n";
+        std::cout << "4. Thursday \n";
+        std::cout << "5. Friday \n";
+        std::cout << "6. Saturday \n";
+        std::cout << "7. Sunday \n";
         std::cin >> daySelection;
 
-            if (daySelection == 'Monday') {
+            if (daySelection == 1) {
                 clearDay(mondayTasks);
-            } else if (daySelection == 'Tuesday') {
+            } else if (daySelection == 2) {
                 clearDay(tuesdayTasks);
-            } else if (daySelection == 'Wednesday') {
+            } else if (daySelection == 3) {
                 clearDay(wednesdayTasks);
-            } else if (daySelection == 'Thursday') {
+            } else if (daySelection == 4) {
                 clearDay(thursdayTasks);
-            } else if (daySelection == 'Friday') {
+            } else if (daySelection == 5) {
                 clearDay(fridayTasks);
-            } else if (daySelection == 'Saturday') {
+            } else if (daySelection == 6) {
                 clearDay(saturdayTasks);
-            } else if (daySelection == 'Sunday') {
+            } else if (daySelection == 7) {
                 clearDay(sundayTasks);
             }
     }   else if (menuSelection == 6) {
@@ -166,6 +187,7 @@ void menu() {
 
 std::forward_list<std::string> addTask(std::forward_list<std::string> tempList)
 {
+    std::cout << "Please enter a task to add.";
     std::string task;
     std::cin >> task;
     std::cout << std::endl;
@@ -193,8 +215,10 @@ std::forward_list<std::string> removeTask(std::forward_list<std::string> tempLis
     return tempList;
 }
 
-bool isInList(std::forward_list<std::string> tempList, std::string task) {
+bool isInList(std::forward_list<std::string> tempList, const std::string& task) {
+
     auto findIter = std::find(tempList.begin(), tempList.end(), task);
+    return true;
 }
 
 void clearSchedule(std::array<std::forward_list<std::string>, 7> scheduleArray)
@@ -214,7 +238,7 @@ std::forward_list<std::string> clearDay(std::forward_list<std::string> tempList)
 void exampleSchedule()
 {
     std::forward_list<std::string> mondayTasks; // example list for monday
-    daySelection = 'Monday'; // example variable
+    daySelection = 1; // example variable
 
     mondayTasks.assign({"Do laundry", "Dance practice", "Write c++ code"});
     printDay(mondayTasks);
@@ -225,17 +249,12 @@ void exampleSchedule()
 void printDay(std::forward_list<std::string> tempList)
 {
     // print the day by iterating through each element of the linked list
-    std::cout << "That day has the following tasks: " << std::endl;
+    std::cout << "\n" << "That day has the following tasks: " << std::endl;
     for (std::string&s : tempList)
         std::cout << s << std::endl;
     std::cout << std::endl;
 }
 
-void printSchedule()
-{
-    // I don't think we need a print schedule since we already have a printDay.
-}
-    
 void exit()
 {
     std::cout << std::endl;
